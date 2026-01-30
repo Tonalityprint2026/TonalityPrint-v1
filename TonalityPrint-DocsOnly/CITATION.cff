@@ -1,0 +1,93 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "TonalityPrint: A Contrast-Structured Voice Dataset for Exploring Functional Tonal Intent, Ambivalence, and Inference-Time Prosodic Alignment v1.0"
+version: 1.0.0
+doi: 10.5281/zenodo.17913895
+date-released: 2026-01-24
+url: "https://doi.org/10.5281/zenodo.17913895"
+repository-code: "https://github.com/TonalityPrint/TonalityPrint-v1"
+license: CC-BY-NC-4.0
+authors:
+  - family-names: Polhill
+    given-names: Ronda
+    email: ronda@TonalityPrint.com
+    affiliation: Independent Researcher
+    orcid: ""
+keywords:
+  - tonality
+  - inference
+  - ambivalence detection
+  - functional tonal intent
+  - voice dataset
+  - prosody dataset
+  - human-AI communication
+  - conversational AI
+  - single speaker dataset
+  - tonality regression
+  - voice AI
+  - voice alignment
+  - fine tuning
+  - AI safety
+  - autonomous systems
+  - sycophancy-mitigation
+  - voice agents
+  - personalized AI
+  - embodied AI
+  - companion AI
+  - ethical voice data
+  - expressive synthesis
+  - humanoid robotics
+  - prosodic interpretability
+  - intent aligned dataset
+  - inference-time prosodic alignment
+  - trust calibration
+  - fine-tuning dataset
+  - human voice dataset
+  - intent drift
+  - tonal alignment
+  - agentic AI
+  - outcome inference
+  - human-AI alignment
+  - uncanny-valley-effect
+  - prosodic trust
+  - prosodic intentionality
+  - safety alignment
+  - prosodic style transfer
+  - empathetic AI
+  - humanoid voice appearance
+  - human-in-the-loop
+  - human baseline
+  - real-world experience
+abstract: >
+  TonalityPrint is a specialized single-speaker speech corpus designed
+  to enable exploration of fine-tuning functional tonal intents - Trust,
+  Attention, Reciprocity, Empathy Resonance, and Cognitive Energy - in
+  voice AI systems. Unlike emotion recognition datasets, TonalityPrint
+  annotates functional tonal intents (what speakers do with tone), not
+  just what they feel. The dataset provides 144 audio samples across 18
+  utterances, each recorded in 8 parallel prosodic states. A core innovation
+  is systematic ambivalence annotation, treating tonal complexity as a
+  perceptual entropy cross-intent feature rather than noise. Utilizing a
+  Fixed-Phrase Octet design, the dataset enables Differential Latent Analysis
+  (DLA) for contrastive approximation of tonal intent vectors. Annotations
+  are grounded in 8,873+ consequential interactions, capturing an AI-adjacent
+  yet trusted vocal profile. TonalityPrint is intended as a hypothesized
+  contrast substrate for researchers exploring inference-time alignment,
+  prosodic interpretability, style-conditioned synthesis, human-AI voice
+  calibration, and safety-critical voice agents. All recordings are 100%
+  authentic human voice (author) with explicit consent, released under CC
+  BY-NC 4.0 (academic/research free; commercial licensing available).
+references:
+  - type: article
+    title: "Tonality as Attention"
+    authors:
+      - family-names: Polhill
+        given-names: Ronda
+    year: 2025
+    publisher:
+      name: Zenodo
+    doi: 10.5281/zenodo.17410581
+contact:
+  - email: ronda@TonalityPrint.com
+    name: Ronda Polhill

@@ -1,0 +1,349 @@
+═══════════════════════════════════════════════════════════════════════════
+  TONALITYPRINT VOICE DATASET v1.0 - QUICK START GUIDE
+═══════════════════════════════════════════════════════════════════════════
+
+DOI: https://doi.org/10.5281/zenodo.17913895
+License: CC BY-NC 4.0 (Non-commercial use)
+Contact: ronda@TonalityPrint.com
+
+This quick start guide provides 4 essential steps to begin working with the
+TonalityPrint Voice Dataset. For comprehensive documentation, see README.md.
+
+═══════════════════════════════════════════════════════════════════════════
+  STEP 1: DOWNLOAD AND EXTRACT
+═══════════════════════════════════════════════════════════════════════════
+
+Option A: Download from Zenodo
+-------------------------------
+1. Visit: https://doi.org/10.5281/zenodo.17913895
+2. Download: DATACARD.zip (42.9 MB)
+3. Extract: unzip DATACARD.zip
+
+Option B: Command Line (if network allows)
+-------------------------------------------
+wget https://zenodo.org/records/17913895/files/DATACARD.zip
+unzip DATACARD.zip
+
+Expected Directory Structure:
+-----------------------------
+TonalityPrint_v1/
+├── audio/                              # 144 WAV files (48kHz, 16-bit, mono)
+├── annotations/
+│   ├── json/                          # 144 JSON files
+│   ├── csv/                           # 144 CSV files
+│   └── ALL_TONALITY_DATA_COMBINED.csv # Combined dataset (144 rows)
+├── documentation/                      # 9 reference files
+├── README.md                           # Dataset overview
+├── QUICK_START.txt                     # This file
+├── LICENSE.txt                         # CC BY-NC 4.0
+└── CITATION.cff                        # Citation metadata
+
+═══════════════════════════════════════════════════════════════════════════
+  STEP 2: LOAD ANNOTATION DATA
+═══════════════════════════════════════════════════════════════════════════
+
+Python Example:
+---------------
+import pandas as pd
+import json
+
+# Load combined CSV (all 144 annotations)
+df = pd.read_csv('annotations/ALL_TONALITY_DATA_COMBINED.csv')
+
+# Display basic info
+print(f"Total samples: {len(df)}")
+print(f"Columns: {df.columns.tolist()}")
+
+# Parse segment-level JSON data
+df['Segments_Parsed'] = df['Segments'].apply(json.loads)
+
+# Preview first few rows
+print(df.head())
+
+R Example:
+----------
+library(readr)
+library(jsonlite)
+
+# Load combined CSV
+data <- read_csv('annotations/ALL_TONALITY_DATA_COMBINED.csv')
+
+# Parse segment-level JSON data
+data$Segments_Parsed <- lapply(data$Segments, fromJSON)
+
+# Preview
+head(data)
+
+Key Variables (23 total columns):
+----------------------------------
+- Version, Batch_Number, Utterance_Number, Utterance_Type
+- File_Name, Primary_Intention, Sub_Modifier, Ambivalex
+- Speaker, Utterance_Text
+- Trust_Index, Reciprocity_Index, Empathy_Resonance_Index
+- Cognitive_Energy_Index, Attention_Index
+- Notes, Duration, Date_Recorded, Source, Segments
+- Start_Time, End_Time, Timestamp
+
+See CODEBOOK.md for detailed variable definitions.
+
+═══════════════════════════════════════════════════════════════════════════
+  STEP 3: ACCESS AUDIO FILES
+═══════════════════════════════════════════════════════════════════════════
+
+Python Example (using librosa):
+--------------------------------
+import librosa
+import numpy as np
+
+# Load a single audio file
+audio_path = 'audio/TPV1_B1_UTT1_S_Att_SP-Ronda.wav'
+audio, sr = librosa.load(audio_path, sr=48000, mono=True)
+
+print(f"Sample rate: {sr} Hz")
+print(f"Duration: {len(audio)/sr:.2f} seconds")
+print(f"Audio shape: {audio.shape}")
+
+# Extract MFCC features
+mfcc = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=13)
+print(f"MFCC shape: {mfcc.shape}")
+
+# Extract pitch (F0)
+f0 = librosa.yin(audio, fmin=75, fmax=300, sr=sr)
+print(f"Pitch range: {np.nanmin(f0):.1f} - {np.nanmax(f0):.1f} Hz")
+
+Python Example (using scipy):
+------------------------------
+from scipy.io import wavfile
+
+# Load audio file (preserves original 48kHz, 16-bit)
+sr, audio = wavfile.read('audio/TPV1_B1_UTT1_S_Att_SP-Ronda.wav')
+
+print(f"Sample rate: {sr} Hz")
+print(f"Data type: {audio.dtype}")
+print(f"Duration: {len(audio)/sr:.2f} seconds")
+
+Audio Specifications:
+---------------------
+- Format: WAV (uncompressed PCM)
+- Sample Rate: 48,000 Hz (48kHz)
+- Bit Depth: 16-bit
+- Channels: Mono (1 channel)
+- Duration: 3-6 seconds per file
+- Processing: None (raw, unprocessed audio)
+
+File Naming Convention:
+-----------------------
+TPV1_[Batch]_[Utterance]_[Type]_[Intent]_[Modifier]_[Ambivalex]_SP-Ronda.wav
+
+Examples:
+- TPV1_B1_UTT1_S_Att_SP-Ronda.wav (Single - Attention only)
+- TPV1_B1_UTT1_S_Reci_affi_SP-Ronda.wav (Compound - Reciprocity + Affirming)
+- TPV1_B1_UTT1_S_Reci_affi_ambivalex_SP-Ronda.wav (Complex - with Ambivalence)
+
+═══════════════════════════════════════════════════════════════════════════
+  STEP 4: EXPLORE COMMON TASKS
+═══════════════════════════════════════════════════════════════════════════
+
+Task 1: Filter by Primary Intention
+------------------------------------
+# Get all "Trust" samples
+trust_samples = df[df['Primary_Intention'] == 'Trust']
+print(f"Trust samples: {len(trust_samples)}")
+
+# Get all samples with ambivalence
+ambivalent_samples = df[df['Ambivalex'] == 'ambivalex']
+print(f"Ambivalent samples: {len(ambivalent_samples)}")
+
+# Get Trust samples with "calm" sub-modifier
+trust_calm = df[
+    (df['Primary_Intention'] == 'Trust') & 
+    (df['Sub_Modifier'] == 'calm')
+]
+
+Task 2: Analyze Tonality Indices
+---------------------------------
+# Compare tonality scores across intentions
+import matplotlib.pyplot as plt
+
+# Average Trust scores by Primary Intention
+trust_by_intent = df.groupby('Primary_Intention')['Trust_Index'].mean()
+print(trust_by_intent)
+
+# Visualize distribution
+df['Cognitive_Energy_Index'].hist(bins=20)
+plt.xlabel('Cognitive Energy Score')
+plt.ylabel('Frequency')
+plt.title('Cognitive Energy Distribution (Note: Systematic Elevation)')
+plt.show()
+
+# Note: Cognitive Energy shows known systematic bias (~86-100 range)
+# See README.md and METHODOLOGY.md for details
+
+Task 3: Contrastive Analysis (Fixed-Phrase Octet)
+--------------------------------------------------
+# Compare same utterance across different intentions
+utt1_samples = df[df['Utterance_Number'] == 'UTT1']
+
+# Extract indices for comparison
+intentions = utt1_samples['Primary_Intention'].tolist()
+trust_scores = utt1_samples['Trust_Index'].tolist()
+attention_scores = utt1_samples['Attention_Index'].tolist()
+
+# Visualize tonality profiles for same text
+# (This enables Differential Latent Analysis - see DATASET_CARD.md)
+
+Task 4: Access Segment-Level Data
+----------------------------------
+# Get temporal tonality dynamics for first sample
+first_sample = df.iloc[0]
+segments = first_sample['Segments_Parsed']
+
+for seg in segments:
+    print(f"Time: {seg['startTime']:.0f} - {seg['endTime']:.0f} ms")
+    print(f"Trust: {seg['trust']}, Attention: {seg['attention']}")
+    print(f"Reciprocity: {seg['reciprocity']}, Empathy: {seg['empathy']}")
+    print(f"Cognitive: {seg['cognitive']}")
+
+═══════════════════════════════════════════════════════════════════════════
+  DATASET QUICK FACTS
+═══════════════════════════════════════════════════════════════════════════
+
+Total Files:          446 (144 audio + 144 JSON + 144 CSV + 1 combined + 13 docs)
+Audio Duration:       ~11 minutes 5 seconds
+Unique Utterances:    18
+Prosodic States:      8 per utterance
+Speaker:              1 (Ronda Polhill - mid-life female, native English)
+Recording Period:     December 2025 - January 2026
+Environment:          Controlled home studio (unprocessed audio)
+
+Primary Intentions:   Trust, Attention, Reciprocity, Empathy Resonance,
+                      Cognitive Energy, Baseline/Neutral
+
+Sub-Modifiers:        24 optional (e.g., calm, analytical, affirming, warm)
+Ambivalence:          Systematic annotation of tonal complexity
+
+Tonality Indices:     5 continuous scores (0-100 scale)
+                      - Trust (TR)
+                      - Attention (AT)
+                      - Reciprocity (RE)
+                      - Empathy Resonance (ER)
+                      - Cognitive Energy (CE)
+
+Known Bias:           Cognitive Energy systematic elevation (documented)
+Quality Control:      ~18.05% re-recorded, ~80+% acoustic-intent alignment
+
+License:              CC BY-NC 4.0 (non-commercial use)
+Commercial Licensing: ronda@TonalityPrint.com
+
+═══════════════════════════════════════════════════════════════════════════
+  IMPORTANT LIMITATIONS
+═══════════════════════════════════════════════════════════════════════════
+
+⚠ SINGLE SPEAKER: All 144 files from same speaker (Ronda Polhill)
+   → Findings may not generalize across genders, ages, accents, cultures
+   → State explicitly: "single-speaker dataset" in publications
+
+⚠ CONTROLLED ENVIRONMENT: Professional studio recordings, scripted content
+   → May not reflect naturalistic speech conditions
+   → Do not generalize to noisy, real-world scenarios without validation
+
+⚠ COGNITIVE ENERGY BIAS: Systematic elevation across corpus
+   → Most samples score 86-100 on Cognitive Energy scale
+   → Account for bias in analyses, see Notes field in data
+
+⚠ PERCEPTUAL SCORES: Tonality indices are annotator perceptions, not validated scales
+   → Treat as exploratory, not ground truth
+   → Single annotator (no inter-rater reliability)
+
+⚠ OBSERVATIONAL CONTEXT: 8,873+ interactions referenced (correlation, not causation)
+   → Do not claim causal relationships without additional evidence
+
+═══════════════════════════════════════════════════════════════════════════
+  PROHIBITED USES
+═══════════════════════════════════════════════════════════════════════════
+
+🚫 STRICTLY FORBIDDEN:
+   - Creating unauthorized voice clones or deepfakes of the speaker
+   - Commercial use without explicit licensing
+   - Deceptive applications or impersonation
+   - Biometric identification without consent
+
+See ETHICAL_USE_AND_LIMITATIONS.md for complete guidelines.
+
+═══════════════════════════════════════════════════════════════════════════
+  CITATION
+═══════════════════════════════════════════════════════════════════════════
+
+BibTeX:
+-------
+@dataset{polhill_2026_tonalityprint,
+  author       = {Polhill, Ronda},
+  title        = {TonalityPrint: A Contrast-Structured Voice Dataset 
+                  for Exploring Functional Tonal Intent, Ambivalence, 
+                  and Inference-Time Prosodic Alignment v1.0},
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.17913895},
+  url          = {https://doi.org/10.5281/zenodo.17913895}
+}
+
+APA:
+----
+Polhill, R. (2026). TonalityPrint: A Contrast-Structured Voice Dataset for
+Exploring Functional Tonal Intent, Ambivalence, and Inference-Time Prosodic
+Alignment v1.0 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.17913895
+
+═══════════════════════════════════════════════════════════════════════════
+  NEXT STEPS
+═══════════════════════════════════════════════════════════════════════════
+
+For Comprehensive Information:
+-------------------------------
+📖 README.md                        - Dataset overview and usage
+📖 DATASET_CARD.md                  - ML dataset card (motivation, composition)
+📖 CODEBOOK.md                      - Variable definitions (all 23 columns)
+📖 METHODOLOGY.md                   - Data collection and annotation procedures
+📖 ETHICAL_USE_AND_LIMITATIONS.md  - Ethical guidelines and constraints
+📖 CHANGELOG.md                     - Version history
+
+For Specific Questions:
+-----------------------
+🔍 File naming conventions        → CODEBOOK.md, Section 1
+🔍 Tonality index definitions     → CODEBOOK.md, Section 3
+🔍 Recording procedures           → METHODOLOGY.md, Section 2
+🔍 Quality control process        → METHODOLOGY.md, Section 4
+🔍 Known biases                   → ETHICAL_USE_AND_LIMITATIONS.md, Section 6
+🔍 Annotation guidelines          → documentation/annotations.txt
+🔍 Speaker profile                → documentation/speaker_profile.txt
+🔍 Technical specifications       → documentation/tech_specs.txt
+
+Support and Contact:
+--------------------
+📧 Email: ronda@TonalityPrint.com
+🌐 Website: https://TonalityPrint.com
+🔗 DOI: https://doi.org/10.5281/zenodo.17913895
+
+Related Work:
+-------------
+📄 White Paper: "Tonality as Attention" (Polhill, 2025)
+   DOI: https://doi.org/10.5281/zenodo.17410581
+
+═══════════════════════════════════════════════════════════════════════════
+  THANK YOU FOR USING TONALITYPRINT!
+═══════════════════════════════════════════════════════════════════════════
+
+TonalityPrint aims to advance voice AI research by providing a controlled
+substrate for investigating functional tonal intent, ambivalence detection,
+and inference-time prosodic alignment.
+
+We welcome:
+- Research publications using the dataset
+- Collaborative validation studies
+- Community feedback and bug reports
+- Derivative datasets (with proper attribution)
+
+Please cite properly and use responsibly!
+
+Version: 1.0.0 | January 24, 2026 | CC BY-NC 4.0 | © 2026 Ronda Polhill
+═══════════════════════════════════════════════════════════════════════════

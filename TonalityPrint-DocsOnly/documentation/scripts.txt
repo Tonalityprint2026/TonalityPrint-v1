@@ -1,0 +1,24 @@
+﻿TonalityPrint v1 Voice Dataset 
+
+
+Script of 18 Utterances 
+
+
+Utterance 1: I want to make sure I understand what you need
+Utterance 2: Just let me know where you’d like to start, and we’ll go from there
+Utterance 3: We can take this one step at a time - whatever works best for you
+Utterance 4: Allow me to walk you through the options we have available
+Utterance 5: That's a great question - here's what I would recommend
+Utterance 6: Would you like me to explain how this works?
+Utterance 7: If now isn’t the best time, I can follow up later. Whatever is easiest for you
+Utterance 8: Just to confirm, we are focusing on planning today. Is that correct?
+Utterance 9: Thank you for sharing that. Let’s take a look at your options together
+Utterance 10: That makes a lot of sense. Let's proceed whenever you're ready
+Utterance 11: I will go ahead and log this in the system for future reference
+Utterance 12: Let’s take a closer look at the details to make sure the systems are synchronized
+Utterance 13: Is there anything else that I can clarify for you?
+Utterance 14: This direction is flexible, and can adjust as your needs evolve
+Utterance 15: Does this option still make sense for you so far?
+Utterance 16: I will help you, but this feels risky
+Utterance 17: Sure, I’m in… unless it all goes wrong
+Utterance 18: I’m excited, but this also may fail

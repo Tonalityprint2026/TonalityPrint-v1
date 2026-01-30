@@ -1,0 +1,120 @@
+# 🚀 How to Upload to GitHub (5 Minutes)
+
+## SUPER SIMPLE - Just Drag & Drop!
+
+---
+
+## Step 1: Create GitHub Repository (2 minutes)
+
+1. Go to: **https://github.com/new**
+
+2. Fill in:
+   - Repository name: `TonalityPrint-v1`
+   - Description: `A Contrast-Structured Voice Dataset for Exploring Functional Tonal Intent (Documentation)`
+   - ✅ Public
+   - ❌ Do NOT check "Add a README file"
+   - Click **"Create repository"**
+
+---
+
+## Step 2: Upload All Files (3 minutes)
+
+1. On your new repository page, you'll see "Quick setup" instructions
+
+2. Look for the link that says **"uploading an existing file"** 
+   (or click "Add file" → "Upload files")
+
+3. **DRAG ALL FILES from this folder** into the GitHub upload area:
+   - README.md
+   - DATASET_CARD.md
+   - DOWNLOAD_DATA.md ⭐ (tells users where to get data)
+   - CITATION.cff
+   - LICENSE
+   - ETHICAL_USE_AND_LIMITATIONS.md
+   - CHANGELOG.md
+   - QUICK_START.txt
+   - REPOSITORY_GUIDE.md
+   - documentation/ (entire folder)
+
+4. At the bottom:
+   - Commit message: `Initial commit: TonalityPrint v1.0.0 documentation`
+   - Click **"Commit changes"**
+
+5. Wait 30 seconds for upload
+
+---
+
+## Step 3: Configure Repository (1 minute)
+
+1. Click "Settings" tab
+
+2. Scroll to "About" (right side of main page)
+   - Click ⚙️ (gear icon)
+   - Website: `https://doi.org/10.5281/zenodo.17913895`
+   - Topics: Add these tags:
+     - voice-dataset
+     - prosody
+     - ai-alignment
+     - tone-detection
+     - speech-processing
+   - Save changes
+
+---
+
+## ✅ DONE!
+
+Your repository is live at:
+**https://github.com/YOUR_USERNAME/TonalityPrint-v1**
+
+---
+
+## What Users Will See
+
+**On GitHub:**
+- Complete documentation
+- Clear instructions to download data from Zenodo
+- Citation information
+- Ethical guidelines
+
+**They download data from:**
+- Zenodo (you get official download metrics!)
+
+---
+
+## Next Steps (Optional)
+
+### Share Your Repository:
+- Update TonalityPrint.com with GitHub link
+- Share on Twitter/LinkedIn
+- Email academic contacts
+
+### Track Engagement:
+- **Zenodo:** Official download statistics
+- **GitHub:** Stars, forks, issues, discussions
+
+---
+
+## Help
+
+**Need help?** 
+- Check if you're signed in to GitHub
+- Make sure repository name doesn't already exist
+- Contact: ronda@TonalityPrint.com
+
+---
+
+**This Package Contains:**
+- 8 root documentation files
+- 9 authoritative source files (documentation/ folder)
+- DOWNLOAD_DATA.md (instructions for getting dataset)
+- Total: 18 files, ~200KB
+- No large files - uploads in seconds!
+
+**What's NOT Included (on purpose):**
+- Audio files (144 WAV) - on Zenodo
+- Annotations (289 files) - on Zenodo
+- Why? GitHub tracks collaboration, Zenodo tracks downloads!
+
+---
+
+**Ready? Just drag and drop! 🎉**

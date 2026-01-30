@@ -1,0 +1,301 @@
+MANIFEST - TonalityPrint Voice Dataset v1.0
+===========================================
+
+This manifest provides a complete inventory of all files included in the TonalityPrint Voice Dataset v1.0.
+
+DATASET OVERVIEW
+----------------
+Version: 1.0.0
+Release Date: January 24, 2026
+DOI: https://doi.org/10.5281/zenodo.17913895
+License: CC BY-NC 4.0
+
+Total Audio Files: 144 WAV files
+Total JSON Files: 144 individual JSON annotations
+Total CSV Files: 144 individual CSVs + 1 combined CSV (ALL_TONALITY_DATA_COMBINED.csv)
+Documentation Files: 13 files (4 root + 9 in documentation folder)
+Total Dataset Files: 446 files (144 audio + 144 JSON + 145 CSV/combined + 13 documentation)
+
+Recording Format: 16-bit PCM WAV (uncompressed)
+Recording Source: 48kHz, 32-bit float (Audacity) → Exported as 16-bit PCM
+Sample Rate: 48,000 Hz (48kHz)
+Bit Depth: 16-bit
+Channels: Mono (1 channel)
+Speaker: Single speaker (Ronda Polhill)
+Language: English (American)
+Duration Range: 3-6 seconds per utterance
+Total Duration: ~11 minutes 5 seconds
+
+Annotation Method: Expert practitioner (perceptual assessment)
+Annotation Completeness: 100% (all files fully annotated)
+Quality Control: ~18.05% of corpus re-recorded after proprietary heuristic audit
+
+FILE STRUCTURE
+--------------
+TonalityPrint_v1/
+│
+├── README.md                                    [ML Dataset Card - Primary documentation]
+├── QUICK_START.txt                              [4-step quick start guide]
+├── LICENSE.txt                                  [CC BY-NC 4.0 License - Full legal text]
+├── CITATION.cff                                 [Machine-readable citation metadata]
+│
+├── documentation/                               [Technical reference documentation]
+│   ├── CODEBOOK.md                              [Variable definitions - All 23 CSV columns]
+│   ├── METHODOLOGY.md                           [Data collection & annotation procedures]
+│   ├── MANIFEST.txt                             [This file - Complete file inventory]
+│   ├── annotations.txt                          [Annotation guidelines and documentation]
+│   ├── continuous_indices.txt                   [Continuous intensity rating guidelines]
+│   ├── scripts.txt                              [Script documentation]
+│   ├── speaker_profile.txt                      [Speaker information and characteristics]
+│   ├── tech_specs.txt                           [Technical specifications]
+│   └── transcripts.txt                          [Transcript documentation]
+│
+├── audio/                                       [Audio recordings - 144 files]
+│   ├── TPV1_B1_UTT1_S_Att_SP-Ronda.wav
+│   ├── TPV1_B1_UTT1_S_Baseneutral_SP-Ronda.wav
+│   ├── TPV1_B1_UTT1_S_Cogen_SP-Ronda.wav
+│   ├── ... [141 more WAV files]
+│   └── TPV1_B6_UTT18_S_Trus_SP-Ronda.wav
+│
+└── annotations/                                 [Annotation data - 289 files total]
+    ├── json/                                    [Original JSON annotations - 144 files]
+    │   ├── TPV1_B1_UTT1_S_Att_SP-Ronda.json
+    │   ├── ... [143 more JSON files]
+    │   └── TPV1_B6_UTT18_S_Trus_SP-Ronda.json
+    │
+    ├── csv/                                     [CSV format annotations - 144 files]
+    │   ├── TPV1_B1_UTT1_S_Att_SP-Ronda.csv
+    │   ├── ... [143 more CSV files]
+    │   └── TPV1_B6_UTT18_S_Trus_SP-Ronda.csv
+    │
+    └── ALL_TONALITY_DATA_COMBINED.csv           [Combined dataset - All 144 rows in single file]
+
+
+AUDIO FILES INVENTORY (144 total)
+----------------------------------
+
+Batch 1 (B1) - Utterances 1-3:
+- TPV1_B1_UTT1_S_Att_SP-Ronda.wav
+- TPV1_B1_UTT1_S_Baseneutral_SP-Ronda.wav
+- TPV1_B1_UTT1_S_Cogen_SP-Ronda.wav
+- TPV1_B1_UTT1_S_Emre_SP-Ronda.wav
+- TPV1_B1_UTT1_S_Reci_affi_ambivalex_SP-Ronda.wav
+- TPV1_B1_UTT1_S_Reci_affi_SP-Ronda.wav
+- TPV1_B1_UTT1_S_Reci_SP-Ronda.wav
+- TPV1_B1_UTT1_S_Trus_SP-Ronda.wav
+- TPV1_B1_UTT2_S_Att_SP-Ronda.wav
+- TPV1_B1_UTT2_S_Baseneutral_SP-Ronda.wav
+- TPV1_B1_UTT2_S_Cogen_SP-Ronda.wav
+- TPV1_B1_UTT2_S_Emre_SP-Ronda.wav
+- TPV1_B1_UTT2_S_Reci_colla_ambivalex_SP-Ronda.wav
+- TPV1_B1_UTT2_S_Reci_colla_SP-Ronda.wav
+- TPV1_B1_UTT2_S_Reci_SP-Ronda.wav
+- TPV1_B1_UTT2_S_Trus_SP-Ronda.wav
+- TPV1_B1_UTT3_S_Att_SP-Ronda.wav
+- TPV1_B1_UTT3_S_Baseneutral_SP-Ronda.wav
+- TPV1_B1_UTT3_S_Cogen_SP-Ronda.wav
+- TPV1_B1_UTT3_S_Emre_SP-Ronda.wav
+- TPV1_B1_UTT3_S_Reci_SP-Ronda.wav
+- TPV1_B1_UTT3_S_Trus_calm_ambivalex_SP-Ronda.wav
+- TPV1_B1_UTT3_S_Trus_calm_SP-Ronda.wav
+- TPV1_B1_UTT3_S_Trus_SP-Ronda.wav
+
+[Batches 2-6 follow same pattern with 24 files each - complete list available in dataset]
+
+
+ANNOTATION FILES SUMMARY
+-------------------------
+
+JSON Files (144):
+- One JSON file per audio file
+- Contains complete annotation metadata
+- Segment-level temporal data
+- Five tonality indices (0-100 scale)
+
+CSV Files (144):
+- One CSV file per audio file  
+- 23 columns of annotation data
+- Flat format for easy analysis
+- Same data as JSON in tabular format
+
+Combined CSV (1):
+- ALL_TONALITY_DATA_COMBINED.csv
+- All 144 annotations in single file
+- Header row + 144 data rows
+- Complete dataset for bulk analysis
+
+
+DOCUMENTATION FILES
+-------------------
+
+Root Level (4 files):
+
+1. README.md (27K)
+   - ML Dataset Card format
+   - Dataset overview and structure
+   - Supported tasks and use cases
+   - Known biases and limitations
+   - Citation information
+
+2. QUICK_START.txt (9K)
+   - 4-step quick start guide
+   - Common tasks reference
+   - Dataset quick facts
+   - Citation examples
+
+3. LICENSE.txt (430 bytes)
+   - CC BY-NC 4.0 legal text
+   - Non-commercial use permissions
+   - Commercial licensing contact
+
+4. CITATION.cff (3.7K)
+   - Machine-readable citation metadata
+   - BibTeX-compatible format
+   - CFF v1.2.0 standard
+
+Documentation Folder (9 files):
+
+5. CODEBOOK.md (20K)
+   - All 23 CSV column definitions
+   - File naming conventions
+   - Sub-modifier definitions
+   - Tonality indices descriptions
+   - Usage examples
+
+6. METHODOLOGY.md (31K)
+   - Theoretical framework
+   - Recording environment
+   - Annotation procedures
+   - Quality control process
+   - Known biases
+
+7. MANIFEST.txt (This file, 16K)
+   - Complete file inventory
+   - Directory structure
+   - File descriptions
+   - Version information
+
+8. annotations.txt (4K)
+   - Annotation guidelines
+   - Annotation procedures
+
+9. continuous_indices.txt (767 bytes)
+   - Continuous intensity rating guidelines
+   - Scale definitions (0-100)
+   - Intent abbreviations
+
+10. scripts.txt (1.4K)
+    - Script documentation
+
+11. speaker_profile.txt (1.3K)
+    - Speaker characteristics
+    - Background information
+
+12. tech_specs.txt (1.2K)
+    - Technical specifications
+    - Recording equipment details
+
+13. transcripts.txt (1.4K)
+    - Transcript documentation
+
+
+FILE CHECKSUMS
+--------------
+Note: File integrity checksums (MD5 and SHA256) are automatically generated by Zenodo 
+and can be viewed on the dataset's Zenodo record page.
+
+For local verification of downloaded files, users can generate checksums using:
+- Linux/Mac: `md5sum *` or `shasum -a 256 *`
+- Windows: `certutil -hashfile <filename> MD5` or `certutil -hashfile <filename> SHA256`
+
+Zenodo provides file-level checksums for all files in the dataset, ensuring data integrity
+and enabling verification of downloads.
+
+
+VERSION INFORMATION
+-------------------
+Dataset Version: 1.0.0
+Release Date: January 23, 2026
+Last Updated: January 24, 2026
+DOI: https://doi.org/10.5281/zenodo.17913895
+Zenodo Record: https://zenodo.org/record/17913895
+License: CC BY-NC 4.0 International
+
+Version History:
+- v1.0.0 (January 23, 2026): Initial public release
+  - 144 audio files (WAV format)
+  - 144 JSON annotations
+  - 144 CSV annotations + 1 combined CSV
+  - 13 documentation files
+  - Complete quality control audit (~18.05% re-recorded)
+
+
+DATASET SUMMARY
+---------------
+
+Total Package Contents:
+- Audio Files: 144 WAV files (~11 min 5 sec total)
+- Annotation Files: 289 files (144 JSON + 144 CSV + 1 combined CSV)
+- Documentation: 13 files
+- Total: 446 files
+
+Key Features:
+1. Single speaker (Ronda Polhill) - eliminates speaker variability
+2. Five tonality indices (0-100 continuous scale)
+3. Six primary tonal intents
+4. 24 optional sub-modifiers
+5. Ambivalence marker for complex tonality
+6. Expert practitioner annotations (speaker = annotator)
+7. Quality controlled (~18.05% re-recorded for consistency)
+
+Quality Assurance:
+- Proprietary heuristic audit: ~80+% acoustic-intent alignment
+- Re-recording: ~18.05% of corpus for improved consistency
+- Known bias documented: Cognitive Energy systematic elevation
+- Completeness: 100% of files fully annotated
+
+License & Usage:
+- License: CC BY-NC 4.0 (Non-commercial use)
+- Commercial licensing: Contact ronda@TonalityPrint.com
+- DOI: https://doi.org/10.5281/zenodo.17913895
+
+
+CONTACT INFORMATION
+-------------------
+
+Dataset Curator: Ronda Polhill
+Email: ronda@TonalityPrint.com
+Zenodo Record: https://zenodo.org/record/17913895
+License: CC BY-NC 4.0
+Commercial Licensing: ronda@TonalityPrint.com
+
+Related Work:
+White Paper: "Tonality as Attention" (Polhill, 2025)
+DOI: https://doi.org/10.5281/zenodo.17410581
+
+
+CITATION
+--------
+
+BibTeX:
+@dataset{polhill_2026_tonalityprint,
+  author       = {Polhill, Ronda},
+  title        = {TonalityPrint Voice Dataset v1.0},
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.17913895},
+  url          = {https://doi.org/10.5281/zenodo.17913895}
+}
+
+APA:
+Polhill, R. (2026). TonalityPrint Voice Dataset v1.0 [Data set]. Zenodo. 
+https://doi.org/10.5281/zenodo.17913895
+
+
+---
+END OF MANIFEST
+TonalityPrint Voice Dataset v1.0
+Version 1.0.0 | January 24, 2026
+DOI: https://doi.org/10.5281/zenodo.17913895
+---

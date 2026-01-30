@@ -1,0 +1,29 @@
+﻿TonalityPrint Voice Dataset v 1.0 
+ 
+Continuous Intensity Rating 
+
+
+Primary Functional Tonal Intent Continuous Intensity Rating Guidelines for Trust, Attention, Cognitive Energy, Empathy Resonance and Reciprocity 
+* 0-30: Low/Minimal presence of intent quality
+* 31-60: Moderate presence
+* 61-85: High presence
+* 86-100: Very high/exemplary presence
+ These are annotator perceptual scores, not empirically validated scales.
+
+
+______________________________________________
+
+
+Primary Functional Tonal Intent Continuous Intensity Rating Name key: 
+* Trust: TR
+* Attention: AT
+* Cognitive Energy: CE
+* Empathy Resonance: ER
+* Reciprocity: RE
+
+
+
+
+
+
+NOTE: Please see Zenodo DOI README for Empirical Grounding & Exploratory Provenance details

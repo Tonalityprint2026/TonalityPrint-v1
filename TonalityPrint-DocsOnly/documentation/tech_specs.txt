@@ -1,0 +1,17 @@
+﻿TonalityPrint v1 Voice Dataset 
+ Acoustic Specifications
+Technical Audio Recording Information
+
+
+
+
+
+
+* Recording Equipment: Audacity and Yeti Blue microphone (cardioid mode, ~6-8” distance)
+* Format: Audacity 48kHz/32-bit float WAV (mono). Audio captured with real-time effects disabled in Audacity to preserve original voice tonality signal. All recordings use consistent preset settings.
+* Recording Environment: Controlled home studio with minimal ambient noise, speaker seated, consistent conditions across all recordings
+* No Post-Processing: To preserve the variance of 100% human tonality, this dataset intentionally provides raw, unprocessed audio files without post-processing  (e.g., noise reduction, normalization, filtering or EQ). This approach may include minimal background noise so as not to alter nuanced vocal tonality in an effort to support maximum fidelity specifically designed to analyze micro-tonal expression. No other transformative effects used.
+* Total Files: 144 audio samples
+* Duration Range: Approximately 3-6 seconds per audio sample
+* Total Duration: Approximately 11 minutes 5 seconds
+* Recording Dates: December 2025-January 2026

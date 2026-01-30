@@ -1,0 +1,12 @@
+﻿TonalityPrint v1 Voice Dataset 
+Speaker Profile and Demographics
+Speaker Information
+* Age: Mid-life
+* Gender: Female
+* Linguistic Background: Native English speaker with neutral, mobile accent (Northeastern US baseline, influenced by residency in Okinawa, Las Vegas, Seattle, Phoenix)
+* Vocal Characteristics: Noted for balanced dynamic attention range and tonal precision while maintaining human warmth and interpersonal effectiveness
+* Distinctive Quality: The speaker's voice may represent a rare profile bridging computational precision and human relational warmth, potentially making it a useful value for human-AI voice alignment research investigating the ‘activation’ cadence or  'AI-adjacent yet trusted' anomaly
+* Professional Context: During the dataset development period, the speaker maintained customer-facing dialogue work in a high-volume, high-stakes service environment. The speaker’s adaptive tonal modulation correlated, not causal with top-tier performance metrics and spontaneous episodes of listeners describing the speaker's voice tonality as 'AI-adjacent' while simultaneously rating interactions as highly positive (Generative Hypothesis, Not Causal Proof- These observations emerge from naturalistic practice and are presented as hypothesis-generating rather than hypothesis-confirming. The documented associations between tonal patterns and outcomes warrant controlled investigation but should not be interpreted as established causal relationships.
+as described in Empirical Grounding &  Exploratory Provenance).
+  
+NOTE: Please see Zenodo DOI README for Empirical Grounding & Exploratory Provenance details

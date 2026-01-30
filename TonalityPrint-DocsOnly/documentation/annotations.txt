@@ -1,0 +1,180 @@
+﻿TonalityPrint Voice Dataset v 1.0 
+Annotations 
+Tonal Intent States, Sub-Modifiers, Samples
+Field
+	 Description
+	TPV1
+	Unique ID
+	B
+	batch number
+	UTT
+	 utterance number
+	   E    S    Q   
+	Utterance type exclamation statement question
+	Primary intent
+	Functional Tonal Intent
+	sub-modifier
+	Optional Sub-modifier
+	ambivalex
+	Ambivalence optional cross-intent sub-modifier e
+	notes
+	Optional comments
+	Annotations:
+* Primary Labels (5): Five core functional Tonal Intent States (Trust, Attention, Reciprocity, Empathy Resonance, Cognitive Energy)
+* Secondary Labels (24): Twenty-Four total optional sub-modifiers providing fine-grained descriptors
+*  Baseline/Neutral (1): control sample; default prosody for comparative analysis), 
+Cross-Intent Optional Sub-Modifier (1):
+* Ambivalence (if applicable, across all five Tonal Intent States)
+Intent-Specific Optional Sub-Modifiers (24):
+1. Trust (5): Authoritative, Calm, Confident, Formal/Respectful, Reassuring
+2. Attention (5):Certainty, Clarity, Curious, Focused, Urgent/Pressure
+3. Reciprocity (5): Affirming, Collaborative, Engaged, Open, Reflective
+4. Empathy Resonance (5): Casual, Compassion, Corrective (softened), Sympathetic, Warm
+5. Cognitive Energy (4): Analytical, Dynamic, Enthusiastic, Skeptical
+Single (primary Functional Tonal Intent) Sample:
+7 Identifiers 
+Version 1:  TPV1
+Batch Number (B):  B1
+Utterance Number:  UTT1
+Utterance Types Exclamation (E) Question (Q) Statement (S): S
+Primary Intent (5 to choose from):  Reci
+Speaker (SP-):  SP-Ronda
+File Type:  wav  
+
+
+
+
+Sample 1 Single (primary Functional Tonal Intent) annotation:
+Version_Batch_Utterance_Type_Primary Intent_Speaker
+TPV1_B1_UTT1_S_Reci_SP-Ronda
+
+
+_______________________
+
+
+Compound (primary Functional Tonal Intent with sub-modifier) Sample:
+8 Identifiers 
+Version 1:  TPV1
+Batch Number (B):  B1
+Utterance Number:  UTT1
+Utterance Types Exclamation (E) Question (Q) Statement (S): S
+Primary Intent:  Reci
+Sub-modifier: affi
+Speaker (SP-):  SP-Ronda
+File Type:  wav  
+
+
+
+
+Sample 2 Compound (primary Functional Tonal Intent with a sub-modifier) annotation:
+Version_Batch_Utterance_Type_Primary Intent_submodifier_Speaker
+TPV1_B1_UTT1_S_Reci_affi_SP-Ronda
+
+
+
+
+
+
+_______________________
+Complex (primary Functional Tonal Intent with sub-modifier + ambivalence) Sample:
+9 Identifiers 
+Version 1:  TPV1
+Batch Number (B):  B1
+Utterance Number:  UTT1
+Utterance Types Exclamation (E) Question (Q) Statement (S): S
+Primary Intent:  Reci
+Sub-modifier: affi
+Ambivalence: ambivalex
+Speaker (SP-):  SP-Ronda
+File Type:  wav  
+
+
+
+
+Sample 3 Complex (primary Functional Tonal Intent with a sub-modifier + ambivalence) annotation:
+Version_Batch_Utterance_Type_Primary Intent_submodifier_Speaker
+TPV1_B1_UTT1_S_Reci_affi_SP-Ronda
+
+
+_______________________
+
+
+
+
+
+
+
+
+The first letter of the 5 Primary Tonal States is capitalized
+E.g.,  Att , Cogen
+
+
+All of the optional sub-modifiers letters are all lowercase 
+E.g., warm, curi , ana
+
+
+Ambivalence, the optional cross-modifier is annotated as all lowercase 
+E.g., ambivalex 
+
+
+The first letter of Baseline / Neutral is capitalized
+E.g., Baseneutral
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Attention: Att
+Certainty: cert
+Clarity: clar
+Curious: curi
+Focused: focu
+Urgent/pressure: urge
+
+
+Cognitive Energy: Cogen
+Analytical: ana
+Dynamic: dyna
+Enthusiastic: enth
+Skeptical: skep
+
+
+Empathy Resonance: Emre
+Casual: casu
+Companion: comp
+Corrective (softened): corr
+Sympathetic: symp
+Warm: warm
+
+
+Reciprocity:  Reci
+Affirming: affi
+Collaborative: colla
+Engaged: enga 
+Open: open
+Reflective: refl
+
+
+Trust:  Trus
+Authoritative: auth
+Calm: calm
+Confident: conf
+Formal/respectful: rest
+Reassuring: reas
+
+
+Ambivalence: ambivalex
+Baseline / Neutral: Baseneutral
+__________________________________
+NOTE: Please see Zenodo DOI README for Definitions and  Annotation Methodology details
