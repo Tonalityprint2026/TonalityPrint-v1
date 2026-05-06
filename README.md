@@ -395,7 +395,7 @@ Polhill, R. (2026). *TonalityPrint: A Contrast-Structured Voice Dataset for Expl
 
 ### Related Work
 
-**Supplement to:** Polhill, R. (2025). "Tonality as Attention" white paper. Zenodo. https://doi.org/10.5281/zenodo.17410581
+**Supplement to:** Polhill, R. (2025). "Tonality as Attention" white paper. Zenodo
 
 ---
 
