@@ -393,9 +393,7 @@ TPV1_[Batch]_[Utterance]_[Type]_[Intent]_[Modifier]_[Ambivalex]_SP-Ronda.wav
 
 Polhill, R. (2026). *TonalityPrint: A Contrast-Structured Voice Dataset for Exploring Functional Tonal Intent, Ambivalence, and Inference-Time Prosodic Alignment v1.0* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.17913895
 
-### Related Work
-
-**Supplement to:** Polhill, R. (2025). "Tonality as Attention" white paper. Zenodo. https://doi.org/10.5281/zenodo.17410581
+ 
 
 ---
 
